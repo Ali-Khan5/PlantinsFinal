@@ -1,14 +1,5 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-// import {signinAction}  from "../store/actions/action"promo_chat
-import Banana from "../media/promo_banan.png";
-import Discuss from "../media/promo_chat.png";
-import Social from "../media/promo_social.png";
-import {
-  changeName,
-  GoogleSignin,
-  facebookSignin
-} from "../store/actions/action";
+import React from "react";
+
 const AboutUS = () => {
   return (
     <div className="container-fluid text-center" style={{ marginTop: "25px" }}>

@@ -1,5 +1,4 @@
 import React from "react";
-// import { Grid, Row, Col } from "react-bootstrap";
 import FBicon from "./../media/fbsvg.svg";
 import Twittericon from "./../media/twittersvg.svg";
 import Instaicon from "./../media/insta.svg";
@@ -15,12 +14,12 @@ const Footer = () => {
           <div className="col-md-12">
             <ul className="nav justify-content-center">
               <li className="nav-item">
-                <a className="nav-link  footerNavLink" href="#">
+                <a className="nav-link  footerNavLink" href="/">
                   Showtimes
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link footerNavLink" href="#">
+                <a className="nav-link footerNavLink" href="/news">
                   News 
                 </a>
               </li>
@@ -30,12 +29,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link footerNavLink" to="/about">
+                <Link className="nav-link footerNavLink" to="/contact">
                   About us
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link footerNavLink " href="#">
+                <a className="nav-link footerNavLink " href="/">
                   Terms Of Use
                 </a>
               </li>
@@ -44,17 +43,17 @@ const Footer = () => {
           <div className="col-md-12">
             <ul className="nav justify-content-center">
               <li className="nav-item">
-                <a className="nav-link footerNavLink" href="#">
+                <a className="nav-link footerNavLink" href="/">
                   <img src={FBicon} style={{width:'40px',height:'40px'}} />
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link footerNavLink" href="#">
+                <a className="nav-link footerNavLink" href="/">
                 <img src={Twittericon} style={{width:'40px',height:'40px'}} />
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link footerNavLink" href="#">
+                <a className="nav-link footerNavLink" href="/">
                 <img src={Instaicon} style={{width:'40px',height:'40px'}} />
                 </a>
               </li>

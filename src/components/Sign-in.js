@@ -1,11 +1,9 @@
-import React, { Component } from "react";
+import React  from "react";
 import { connect } from "react-redux";
 import Banana from "../media/promo_banan.png";
-import Discuss from "../media/promo_chat.png";
-import Social from "../media/promo_social.png";
-import Banana5 from "../media/rating_5.png";
+
 import {
-  changeName,
+  
   GoogleSignin,
   facebookSignin
 } from "../store/actions/action";

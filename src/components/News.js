@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import MovieNews from './NewsSmallComponent/NewsItem';
 import {
@@ -8,7 +7,7 @@ import {
   facebookSignin,
   GetAllNews
 } from "../store/actions/action";
-import Carousal from "./carousal";
+
 class Home extends Component {
   constructor(props) {
     super(props);
