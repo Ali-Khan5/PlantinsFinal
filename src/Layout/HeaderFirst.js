@@ -3,11 +3,10 @@ import "./style.css";
 import { connect } from "react-redux";
 import Model from "./../components/Model/Model";
 import "./header.css";
-// import Logo from './../socialfinderapp.png'
 import { Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import { facebookSignout } from "../store/actions/action";
-// import SignInModel from "./../Components/SignInModel";
+
 import MobileLogo from "../media/fp_logo_small.png";
 class HeaderFirst extends Component {
   constructor(props) {
