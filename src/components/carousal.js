@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import LogoAnimation from "../media/FP_anim.gif";
-import CarousalItem from "./carousalItems";
+import CarousalItem from "./CarousalSmallComponent/carousalItems";
 
 const BootCarousal = () => {
   return (

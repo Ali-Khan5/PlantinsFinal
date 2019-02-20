@@ -1,5 +1,6 @@
 import firebase from "firebase";
 import History from "../../History";
+import Movie from "../../components/Movie";
 
 var config = {
   // apiKey: "AIzaSyBD50M-8ORdMi1c5VmPhT7gGR4yGEkjVcE",
@@ -57,7 +58,7 @@ export function MOVIESData(daa) {
               console.log('action')
               console.log(data.val())
               let Movies = data.val();
-
+         console.log("data from Movies data",Movies);
               dispatch({ type: 'MOVIES', payload: Movies })
 
 
@@ -67,6 +68,42 @@ export function MOVIESData(daa) {
           })
   }
 }
+
+export function GetCommentsofMovie(data){
+  let arrayofComments=[];
+  return dispatch => {
+    console.log('runnning to fetch comments  ')
+
+    firebase.database().ref('Movies/'+data+'/').on('value', snapshot => {
+   
+      snapshot.forEach(obj=>{
+        // console.log(obj.val())
+        if(isObject(obj.val())){
+          console.log(obj.val());
+          arrayofComments.push( obj.val());
+        }
+      })
+      console.log('array of comments before',arrayofComments);
+      dispatch({ type: 'Latest_Comment', payload: arrayofComments })
+      arrayofComments=[];
+      console.log('array of comments after',arrayofComments);
+    })
+}
+}
+
+export function CommentOnMovie(data) {
+  return dispatch => {
+      console.log('commenting ')
+
+      firebase.database().ref('Movies/'+data.NameOftheMovie).push(data)
+      .then((value) => {
+          console.log(value);
+          
+          GetCommentsofMovie(data.NameOftheMovie);
+          })
+  }
+}
+
 
 // export function SignUpFirebase(load) {
 //     // firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
@@ -184,6 +221,9 @@ export function MOVIESData(daa) {
 //         // dispatch(getAllMsg());
 //     }
 // }
+function isObject (item) {
+  return (typeof item === "object" && !Array.isArray(item) && item !== null);
+}
 export function GetAllNews() {
   let arrayofNews = [];
   return dispatch => {

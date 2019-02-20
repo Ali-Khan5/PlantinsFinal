@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import MoviesList from "./MovieList";
 import Gallery from "./AliceSlider";
-import MovieNews from './NewsItem';
+import MovieNews from './NewsSmallComponent/NewsItem';
 import {
   changeName,
   GoogleSignin,

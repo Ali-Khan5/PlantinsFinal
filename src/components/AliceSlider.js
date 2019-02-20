@@ -1,7 +1,7 @@
 import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import BigSlider from "./BigSlider";
+import BigSlider from "./SmallerSliderComponent/BigSlider";
 import { Link } from 'react-router-dom';
 class Gallery extends React.Component {
   onSlideChange(e) {
