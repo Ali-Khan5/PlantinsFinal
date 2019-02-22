@@ -126,16 +126,16 @@ class MoviePage extends Component {
               </div>
             </div>
             <div className="row">
-            <div className="col-12 col-md-7 offset-md-1">
-                    {this.props.Comments?this.props.Comments.map(x => {
-                      return (
-                        <Comment Name={x.userWhoPerformedTheComment} frontImg={x.pictureOfTheUser}  
-                        Comments={x.Comment}
-                        />
-                      );
-                    }
-                    )
-                    :null}
+              <div className="col-12 col-md-7 offset-md-1">
+                {this.props.Comments ? this.props.Comments.map(x => {
+                  return (
+                    <Comment Name={x.userWhoPerformedTheComment} frontImg={x.pictureOfTheUser}
+                      Comments={x.Comment}
+                    />
+                  );
+                }
+                )
+                  : null}
             </div>
             </div>
           </div>
