@@ -76,7 +76,7 @@ class Home extends Component {
         </div>
      <div className="container-fluid">
         {this.props.AllNews
-          ? this.props.AllNews.map(x => {
+          ? this.props.AllNews.slice(0, 5).map(x => {
               console.log(x);
               return (
                 <div className="row" style={{marginTop:'10px'}}>
