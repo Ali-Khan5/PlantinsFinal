@@ -58,7 +58,7 @@ export function MOVIESData(daa) {
               console.log('action')
               console.log(data.val())
               let Movies = data.val();
-         console.log("data from Movies data",Movies);
+            
               dispatch({ type: 'MOVIES', payload: Movies })
 
 

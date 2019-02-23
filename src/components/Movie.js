@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import  Comment from './CommentSmallCompoent/Comment'
 import { connect } from "react-redux";
+import ScrollUp from './ScrollUp/scroll';
 import {
   changeName,
   GoogleSignin,
@@ -64,6 +65,7 @@ class MoviePage extends Component {
         {this.state.MOVIES ? (
           <div>
             <div className="row">
+            <ScrollUp />
               <div
                 className="col-md-11 offset-md-1"
                 style={{ marginTop: "15px" }}

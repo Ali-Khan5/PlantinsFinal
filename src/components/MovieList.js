@@ -1,10 +1,42 @@
-import React from "react";
-import { Link } from 'react-router-dom';
-const MoviesList = () => {
-  return (
-    <div class="container">
-      <div className="row">
-        <div className="col-lg-3 col-md-3 col-6 ">
+import React, { Component }from "react";
+import ShowMovieTumbnail from "./MovieSmallComponent/MovieSmall";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import {
+  MOVIESData
+} from "../store/actions/action";
+class MoviesList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    };
+  }
+  displayMovies=(MovieObj)=>{
+    let tumbnail=[];
+    for (let [key, value] of Object.entries(MovieObj)) {
+      
+      console.log( "values", value);
+     
+        tumbnail.push(<ShowMovieTumbnail movielink={value.name} MovieTumbnail={value.MovieTumbnail} ImgAlt={value.ImgAlt} Title={value.Title} Year={value.Year} Rating={value.Rating}/>)
+      
+  }
+  return tumbnail;
+
+  }
+  componentDidMount() {
+
+  }
+  render() {
+    return (
+      <div class="container">
+        <div className="row">
+        {this.props.MOVIES ?
+       this.displayMovies(this.props.MOVIES)
+          
+         :null
+          }
+          {/* <div className="col-lg-3 col-md-3 col-6 ">
         <Link to="/detail/Antman" style={{color:'black',textDecoration:'none'}}> 
           <div className="card">
             <img
@@ -26,8 +58,8 @@ const MoviesList = () => {
             </div>
           </div>
           </Link>
-        </div>
-        <div className="col-lg-3 col-md-3  col-6">
+        </div> */}
+          {/* <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/justiceLeague"style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-primary text-center">
             <img
@@ -49,8 +81,8 @@ const MoviesList = () => {
             </div>
           </div>
           </Link>
-        </div>
-        <div className="col-lg-3 col-md-3  col-6">
+        </div> */}
+          {/* <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/whiteHouseDown" style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-success text-center">
             <img
@@ -72,8 +104,8 @@ const MoviesList = () => {
             </div>
           </div>
           </Link>
-        </div>
-        <div className="col-lg-3 col-md-3  col-6">
+        </div> */}
+          {/* <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/wonderWomen"style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-info text-center">
             <img
@@ -95,8 +127,8 @@ const MoviesList = () => {
             </div>
           </div>
           </Link>
-        </div>
-        <div className="col-lg-3 col-md-3  col-6">
+        </div> */}
+          {/* <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/oceanEight" style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-info text-center">
             <img
@@ -118,8 +150,8 @@ const MoviesList = () => {
             </div>
           </div>
           </Link>
-        </div>
-
+        </div> */}
+          {/* 
         <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/HacksawRidge" style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-info text-center">
@@ -142,9 +174,9 @@ const MoviesList = () => {
             </div>
           </div>
           </Link>
-        </div>
+        </div> */}
 
-        <div className="col-lg-3 col-md-3  col-6">
+          {/* <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/interview" style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-info text-center">
             <img
@@ -166,9 +198,9 @@ const MoviesList = () => {
             </div>
           </div>
           </Link>
-        </div>
+        </div> */}
 
-        <div className="col-lg-3 col-md-3  col-6">
+          {/* <div className="col-lg-3 col-md-3  col-6">
         <Link to="/detail/johnWick" style={{color:'black',textDecoration:'none'}}> 
           <div className="card card-inverse card-info text-center">
             <img
@@ -190,10 +222,27 @@ const MoviesList = () => {
             </div>
           </div>
           </Link>
+        </div> */}
         </div>
-
       </div>
-    </div>
-  );
-};
-export default MoviesList;
+    );
+  }
+}
+
+function mapStateToProp(state) {
+  return {
+    MOVIES: state.reducer.MOVIES
+  };
+}
+function mapDispatchToProp(dispatch) {
+  return {
+    MOVIESData: () => {
+      dispatch(MOVIESData());
+    }
+  };
+}
+
+export default connect(
+  mapStateToProp,
+  mapDispatchToProp
+)(MoviesList);
